@@ -10,8 +10,12 @@ int product(int a,int b,int c=1)
 }
 int main()
 {
-    int a=7, b=8;
+    int a, b;
+    cout<<"enter two values:";
+    cin>>a>>b;
     cout<<"sum of "<<a<<" "<<b<<" :"<<sum(a,b)<<endl;
-    int c=2;
+    int c;
+    cout<<"enter a value:";
+    cin>>c;
     cout<<"Product of "<<a<<" "<<b<<" "<<c<<" :"<<product(a,b,c)<<endl;
 }
