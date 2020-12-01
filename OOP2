@@ -1,0 +1,26 @@
+#include<iostream>
+using namespace std;
+void CBV(int data)
+{
+    data=1;
+}
+void CBR(int *data)
+{
+    *data=2;
+}
+void CBA(int *data)
+{
+    *data=3;
+}
+int main()
+{
+    int data=0;
+    int &dr=data;
+    int *da=&data;
+    CBV(data);
+    cout<<"Call by Value-> Data:"<<data<<endl;
+     CBR(&dr);
+    cout<<"Call by Reference-> Data:"<<data<<endl;
+     CBA(da);
+    cout<<"Call by Address-> Data:"<<data<<endl;
+}
