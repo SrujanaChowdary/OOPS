@@ -1,0 +1,85 @@
+#include <iostream> 
+using namespace std; 
+  
+// Time Class 
+class Time { 
+    int hr, mins; 
+  
+public: 
+    // Constructors 
+    Time(int h, int m) 
+    { 
+        hr = h; 
+        mins = m; 
+    } 
+    Time() 
+    { 
+        cout << "\nTime's Object Created"; 
+    } 
+    int Minute() 
+    { 
+        int totalmin = (hr * 60) + mins; 
+        return totalmin; 
+    } 
+  
+    // Function to print the value of 
+    // hours and minutes 
+    void show() 
+    { 
+        cout << "Hour: " << hr << endl; 
+        cout << "Minute : " << mins << endl; 
+    } 
+}; 
+  
+// Minutes Class 
+class Minute { 
+    int mins; 
+  
+public: 
+    // Constructors 
+    Minute() 
+    { 
+        mins = 0; 
+    } 
+    void operator=(Time T) 
+    { 
+        mins = T.Minute(); 
+    } 
+  
+    // Function to print the value of 
+    // hours and minutes 
+    void show() 
+    { 
+        cout << "\nTotal Minute : " << mins << endl; 
+    } 
+}; 
+  
+// Function perfomrs type conversion 
+// from the Time class type object 
+// to int data type 
+void TypeConversion(int hour, int mins) 
+{ 
+    Time t1(hour, mins); 
+    t1.show(); 
+    Minute m1; 
+    m1.show(); 
+  
+    // Conversion from Time class 
+    // to Minute class 
+    m1 = t1; 
+    t1.show(); 
+    m1.show(); 
+} 
+  
+// Driver Code 
+int main() 
+{ 
+    // Input value 
+    int hour, mins; 
+    hour = 3, mins = 40; 
+  
+    // Function Call 
+    TypeConversion(hour, mins); 
+  
+    return 0; 
+} 
