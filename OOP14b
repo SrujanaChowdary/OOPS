@@ -1,0 +1,35 @@
+
+#include <iostream>
+using namespace std;
+class ClassB;
+class ClassA {
+    
+    public:
+        ClassA() : numA(0) {}
+       void put(){cin>>numA;} 
+    private:
+        int numA;
+         friend int add(ClassA, ClassB);
+};
+class ClassB {
+    public:
+        ClassB() : numB(0) {}
+     void put(){cin>>numB;}
+    private:
+        int numB;
+        friend int add(ClassA, ClassB);
+};
+int add(ClassA objectA, ClassB objectB) {
+    return (objectA.numA + objectB.numB);
+}
+
+int main() {
+    ClassA A;
+    cout<<"enter value for class A object:";
+    A.put();
+    ClassB B;
+     cout<<"enter value for class B object:";
+     B.put();
+    cout << "Sum: " << add(A,B);
+    return 0;
+}
