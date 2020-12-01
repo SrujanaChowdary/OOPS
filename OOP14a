@@ -1,0 +1,29 @@
+#include<iostream>
+#include<string>
+using namespace std;
+class temp
+{
+    int x;
+    public:
+    void put(int x1){x=x1;}
+    int get(){ return x;}
+    friend void swap(temp&,temp&);
+};
+void swap(temp &t1, temp &t2)
+{
+    int t=t1.get();
+    t1.put(t2.get());
+    t2.put(t);
+}
+int main()
+{ int x;
+   temp t1, t2;
+   cout<<"enter any number: ";
+   cin>>x;
+   t1.put(x);
+   cout<<"enter any number: ";
+   cin>>x;
+   t2.put(x);
+   swap(t1,t2);
+   cout<<"after swapping: t1.x="<<t1.get()<<"\t t2.x= "<<t2.get()<<endl;
+}
