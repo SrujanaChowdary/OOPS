@@ -1,0 +1,23 @@
+#include <iostream>
+using namespace std;
+class temp{
+    private:
+    int x;
+    public:
+    int y;
+    void putX(){ cin>>x;}
+    int getX(){ return x;}
+};
+int main()
+{
+    temp t;
+    cout<<"enter Y-value:";
+    cin>>t.y;
+    cout<<"Enter X-value:";
+     t.putX();
+     cout<<"Y-value: "<<t.y<<endl;   
+     cout<<"X-Value: ";
+     t.getX();
+     cout<<endl;
+    return 0;
+}
