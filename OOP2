@@ -4,9 +4,9 @@ void CBV(int data)
 {
     data=1;
 }
-void CBR(int *data)
+void CBR(int &data)
 {
-    *data=2;
+    data=2;
 }
 void CBA(int *data)
 {
@@ -19,7 +19,7 @@ int main()
     int *da=&data;
     CBV(data);
     cout<<"Call by Value-> Data:"<<data<<endl;
-     CBR(&dr);
+     CBR(dr);
     cout<<"Call by Reference-> Data:"<<data<<endl;
      CBA(da);
     cout<<"Call by Address-> Data:"<<data<<endl;
