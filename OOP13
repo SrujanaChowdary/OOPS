@@ -1,0 +1,41 @@
+#include<iostream>
+#include<string>
+using namespace std;
+int main()
+{
+    string s1,temp;
+    cout<<"intial string: ";
+    getline(cin,s1);
+    cout<<"Length: "<<s1.length();
+    cout<<"\n\tCASE-1: Searching a substring"<<endl;
+   { cout<<"assumed substring:";
+    getline(cin,temp);
+    size_t found = s1.find(temp); 
+    if (found != string::npos) 
+        cout << "First occurrence is " << found << endl;
+       else
+        cout<<"substring not found"<<endl; }
+   cout<<"\n\tCASE-2: Compare with another string"<<endl;
+   { cout<<"Second string: ";
+       getline(cin,temp);
+         if((s1.compare(temp)) < 0) 
+        cout << s1 << " is smaller than " << temp << endl; 
+    if((s1.compare(temp)) == 0) 
+        cout <<"Strings are equal"<<endl;
+    else
+        cout << "Strings didn't match "; }
+         cout<<"\n\tCASE-3: Compare with another string"<<endl;
+         {string s=s1; //copying the string
+         cout<<"string that needs to be swapped:";
+             getline(cin,temp);
+             s.swap(temp);
+             cout<<"String 1:"<<s1<<"\t String 2:"<<temp<<endl; }
+     cout<<"\n\tCASE-4: Append a string"<<endl; 
+     {
+         cout<<"string to be appended: ";
+         getline(cin,temp);
+         s1.append(temp);
+         cout<<"Final String: "<<s1;
+     }
+     
+}
