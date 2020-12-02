@@ -1,0 +1,37 @@
+#include<iostream>
+using namespace std;
+class negative{};
+class positive{};
+class zero{};
+void what_sign(int num)throw(positive,negative)
+{
+    if(num>0)
+    throw positive();
+    else
+    if(num<0)
+    throw negative();
+    else
+    throw zero();
+}
+int main()
+{
+    int num;
+    cout<<"enter any number";
+    cin>>num;
+    try
+    {
+        what_sign(num);
+    }
+    catch(positive)
+    {
+        cout<<"+ve exception";
+    }
+    catch(negative)
+    {
+        cout<<"-ve exception";
+    }
+    catch(zero)
+    {
+        cout<<"0 exception";
+    }
+}
