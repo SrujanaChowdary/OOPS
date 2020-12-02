@@ -1,0 +1,69 @@
+#include<iostream>
+using namespace std;
+const int ARR_SIZE=10;
+class array
+{
+    int *arr;
+    int size;
+    public:
+    class SIZE{};
+    class range{};
+    array(int sizerequest)
+    {
+        if(sizerequest<0||sizerequest>ARR_SIZE)
+             throw SIZE();
+        size=sizerequest;
+        arr=new int[size];
+    }
+    ~array()
+        {
+            delete arr;
+        }
+        int &operator[](int i)
+        {
+            if(i<0||i>size)
+               throw range();
+            return arr[i];
+        }
+};
+int main()
+{
+    cout<<"maximum array size allowed= "<<ARR_SIZE<<endl;
+    try
+    {
+        cout<<"trying to create object a1[5]....";
+        array a1(5);
+        cout<<"succedded"<<endl;
+        cout<<"trying to refer a1[5]....";
+        a1[5]=10;
+        cout<<"succedded";
+        cout<<"a1[5]= "<<a1[5]<<endl;
+        cout<<"trying to refer a1[15]...";
+        a1[15]=10;
+        cout<<"succeeded"<<endl;
+    }
+    catch(array::SIZE)
+    {
+        cout<<"size exceeds"<<endl;
+    }
+    catch(array::range)
+    {
+        cout<<"array reference out of range"<<endl;
+    }
+    try
+    {
+        cout<<"trying to create object a2[15]";
+        array a2(15);
+        cout<<"succedded"<<endl;
+        a2[3]=3;
+    }
+    catch(array::SIZE)
+    {
+        cout<<"size exceeds"<<endl;
+        
+    }
+    catch(array::range)
+    {
+        cout<<"array reference out of range "<<endl;
+    }
+}
