@@ -1,0 +1,27 @@
+#include<iostream>
+using namespace std;
+template <class T> //template class
+
+class Example
+{
+  T pair[2]; //the default access specifier for class is private
+  public:
+    Example (T one, T two) //constructor to set the values
+    {
+      pair[0]= one;     
+      pair[1]= two;
+    }
+    void display()    //display function to cout the values stored in "pair"
+    {
+      cout << "value 1 is: " << pair[0] <<endl;
+      cout<< "value 2 is: " << pair[1] <<endl;
+    }
+};
+
+int main() {
+  Example<int> ex(4,5); //declaring object storing int type values
+  ex.display();
+  Example<string> ex2("a","b");  //declaring object storing string type values
+  ex2.display();
+  return 0;
+}
