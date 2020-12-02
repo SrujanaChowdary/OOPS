@@ -1,33 +1,35 @@
-#include<iostream>
-using namespace std;
-struct A
-{
-    int x,y;
-};
-struct B
-{
-    int x;
-    double y;
-};
-template<class T>
-void assign_A(T a,T b,A &s1)
-{
-    s1.x=a;
-    s1.y=b;
-    cout<<s1.x<<endl<<s1.y<<endl;
-}
-template<class T>
-void assign_B(T a,T b,B &s2)
-{
-    s2.x=a;
-    s2.y=b;
-    cout<<s2.x<<endl<<s2.y;
-}
-int main()
-
-{
-    A s1;
-    B s2;
-    assign_A(3,4,s1);
-    assign_B(5,7,s2);
-}
+#include<iostream> 
+using namespace std; 
+  
+// Class template with two parameters 
+template<class T1, class T2> 
+class Test 
+{ 
+        T1 a; 
+        T2 b; 
+    public: 
+        Test(T1 x, T2 y) 
+        { 
+            a = x; 
+            b = y; 
+        } 
+        void show() 
+        { 
+            cout << a << " and " << b << endl; 
+        } 
+}; 
+  
+// Main Function 
+int main() 
+{ 
+    // instantiation with float and int type 
+    Test <float, int> test1 (1.23, 123); 
+      
+    // instantiation with float and char type 
+    Test <int, char> test2 (100, 'W');    
+      
+    test1.show(); 
+    test2.show(); 
+      
+    return 0; 
+} 
