@@ -1,0 +1,70 @@
+#include<iostream>
+using namespace std;
+class wrong_age
+{};
+class father
+{
+    protected:
+    int f_age;
+    public:
+    father(int n)
+    {
+        if(n<0)
+          throw wrong_age();
+          f_age=n;
+    }
+    virtual int getage(void)
+    {
+        return f_age;
+    }
+};
+class son:public father
+{
+    protected:
+    int s_age;
+    public:
+    son(int n,int m):father(n)
+    {
+        if(m>=n)
+        throw wrong_age();
+        s_age=m;
+    }
+    virtual int getavg(void)
+    {
+        return s_age;
+    }
+};
+int main()
+{
+int father_age;
+int son_age;
+father *b;
+cout<<"enter age of father: ";
+cin>>father_age;
+try
+{
+    b=new father(father_age);
+}
+catch(wrong_age)
+{
+    cout<<"error:father age is <0";
+    exit(1);
+}
+cout<<"fathers age:";
+cout<<b->getage()<<endl;
+delete b;
+cout<<"enter age of son";
+cin>>son_age;
+try
+{
+    b=new son(father_age,son_age);
+}
+catch(wrong_age)
+{
+    cout<<"error:father age cannot be less than sons age";
+    exit(1);
+}
+cout<<"sons age:";
+cout<<b->getage()<<endl;
+delete b;
+}
