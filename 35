@@ -1,0 +1,29 @@
+#include <iostream>
+using namespace std;
+class base{
+    public:
+    virtual void fun(){cout<<"In base class"<<endl;}
+};
+class derived: public base
+{
+    public:
+    void fun(){cout<<"In derived class"<<endl;}
+};
+int main()
+{
+    // use of pointer to base class obj and derived obj
+    base * bptr,b;
+    derived d;
+    bptr=&d;
+    bptr->fun();
+    bptr=&b;
+    bptr->fun();
+    // use of array of pointers to derived class obj
+    base* arr[2];
+    derived obj1,obj2;
+    arr[0]=&obj1;
+    arr[1]=&obj2;
+    arr[0]->fun();
+    arr[1]->fun();
+    return 0;
+}
