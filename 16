@@ -1,0 +1,24 @@
+#include<iostream> 
+using namespace std; 
+class Demo 
+{ 
+    int value; 
+    public: 
+    Demo(int v = 0) {value = v;} 
+    void showMessage() 
+    { 
+        cout<<"non- constant member function is called"<<endl; 
+    } 
+    void display()const
+    { 
+        cout<<"constant member function is called"<<endl; 
+    } 
+}; 
+int main() 
+{ 
+   //Constant object are initialised at the time of declaration using constructor 
+    const Demo d1(20); 
+    //d1.showMessage();Error occurred if uncomment. 
+    d1.display(); 
+    return(0); 
+} 
