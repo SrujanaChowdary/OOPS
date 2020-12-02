@@ -1,0 +1,29 @@
+#include <iostream>
+using namespace std;
+class ABC;
+class XYZ {
+private:
+   char ch;
+   int num ;
+public:
+  void put()
+  {
+      cin>>ch>>num;
+  }
+   friend class ABC;
+};
+class ABC {
+public:
+   void disp(XYZ obj){
+      cout<<"character:"<<obj.ch<<endl;
+      cout<<"value:"<<obj.num<<endl;
+   }
+};
+int main() {
+   ABC obj;
+   XYZ obj2;
+   cout<<"enter a character and a number:";
+   obj2.put();
+   obj.disp(obj2);
+   return 0;
+}
