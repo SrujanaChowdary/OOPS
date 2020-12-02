@@ -1,17 +1,33 @@
 #include<iostream>
+#include<fstream>
+#include<cstring>
+
 using namespace std;
+
 int main()
 {
-    int count=0;
-    char c;
-    cout<<"input text"<<endl;
-    cin.get(c);
-    while(c!='\n')
-    {
-        cin.get(c);
-        count++;
-        cout.put(c);
-    }
-    cout<<"\n number of characters="<<count;;
-    
+
+//Creating an output stream to write data to a file
+ofstream ob;
+
+
+//Opening a file named File2.txt to modify the old content
+ob.open("File.txt", ios::out);
+
+char arr[100] = "A file is been created for test";
+
+int length = strlen(arr);
+char ch;
+
+//Reading the char array i.e. a character at a time and writing it to the file
+for(int i=0; i<length; i++)
+{
+ch = arr[i];
+ob.put(ch);	//Writing a character to a file using put() function
+}
+
+//Closing the output stream 
+ob.close();
+
+return 0;
 }
