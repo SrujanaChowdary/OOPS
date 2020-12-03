@@ -15,12 +15,10 @@ void CBA(int *data)
 int main()
 {
     int data=0;
-    int &dr=data;
-    int *da=&data;
     CBV(data);
     cout<<"Call by Value-> Data:"<<data<<endl;
-     CBR(dr);
+     CBR(data);
     cout<<"Call by Reference-> Data:"<<data<<endl;
-     CBA(da);
+     CBA(&data);
     cout<<"Call by Address-> Data:"<<data<<endl;
 }
