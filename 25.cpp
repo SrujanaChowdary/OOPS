@@ -2,11 +2,13 @@
 using namespace std;
 class complex {
     int a, b;
+    static int c;
 public:
 
     void getvalue() {
-        cout << "Enter the value of Complex Numbers a,b:";
+        cout << "Enter the value of Complex Number- "<<c<<" a,b:";
         cin >> a>>b;
+        c++;
     }
 
     complex operator+(complex ob) {
@@ -30,10 +32,10 @@ public:
     }
 
     void display() {
-        cout << a << "+" << b << "i" << "\n";
+        cout << a << "+" <<"("<< b <<")"<< "i" << endl;
     }
 };
-
+int complex:: c=1;
 int main() {
     complex obj1, obj2, result, result1,result2;
 
@@ -44,7 +46,7 @@ int main() {
     result1 = obj1 - obj2;
     result2=obj1*obj2;
 
-    cout << "Input Values:\n";
+    cout << "Input Values:"<<endl;
     obj1.display();
     obj2.display();
 
