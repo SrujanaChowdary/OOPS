@@ -13,15 +13,17 @@ class Example
     }
     void display()    //display function to cout the values stored in "pair"
     {
-      cout << "value 1 is: " << pair[0] <<endl;
-      cout<< "value 2 is: " << pair[1] <<endl;
+      cout << "value 1:" << pair[0] ;
+      cout<< "\tvalue 2:" << pair[1] <<endl;
     }
 };
 
 int main() {
-  Example<int> ex(4,5); //declaring object storing int type values
+  Example<int> ex(4,5);
+  cout<<"declaring object storing int type values: ";
   ex.display();
-  Example<string> ex2("a","b");  //declaring object storing string type values
+  Example<string> ex2("a","b");  
+  cout<<"declaring object storing string type values: ";
   ex2.display();
   return 0;
 }
