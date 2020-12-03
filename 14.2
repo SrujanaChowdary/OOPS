@@ -10,6 +10,8 @@ class ClassA {
     private:
         int numA;
          friend int add(ClassA, ClassB);
+         friend int sub(ClassA, ClassB);
+        friend int prod(ClassA, ClassB);
 };
 class ClassB {
     public:
@@ -18,11 +20,16 @@ class ClassB {
     private:
         int numB;
         friend int add(ClassA, ClassB);
+        friend int sub(ClassA, ClassB);
+        friend int prod(ClassA, ClassB);
 };
 int add(ClassA objectA, ClassB objectB) {
     return (objectA.numA + objectB.numB);
 }
-
+int sub(ClassA objectA, ClassB objectB) {
+    return (objectA.numA - objectB.numB);}
+int prod(ClassA objectA, ClassB objectB) {
+    return (objectA.numA * objectB.numB);}
 int main() {
     ClassA A;
     cout<<"enter value for class A object:";
@@ -31,5 +38,7 @@ int main() {
      cout<<"enter value for class B object:";
      B.put();
     cout << "Sum: " << add(A,B);
+    cout<<"\nDifference:"<<sub(A,B);
+    cout<<"\nProduct: "<<prod(A,B);
     return 0;
 }
