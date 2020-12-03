@@ -1,4 +1,3 @@
-
 #include<iostream>
 using namespace std;
 
@@ -20,25 +19,25 @@ class Inc {
 		Inc operator ++ () {
 			// Operator Function Definition
 			// for prefix
-			return Inc(++count);
+			return Inc(count+1);
 		}
 
 		Inc operator ++ (int) {
 			// Operator Function Definition
 			// with dummy argument for postfix
-			return Inc(count++);
+			return Inc(count+1);
 		}
 
 		Inc operator -- () {
 			// Operator Function Definition
 			// for prefix
-			return Inc(--count);
+			return Inc(count-1);
 		}
 
 		Inc operator -- (int) {
 			// Operator Function Definition
 			// with dummy argument for postfix
-			return Inc(count--);
+			return Inc(count-1);
 		}
 
 		void display(void) {
@@ -47,8 +46,12 @@ class Inc {
 };
 
 int main() {
-	Inc a, b(4), c, d, e(1), f(4);
-
+    int i,j,k,l;
+    cout<<"enter values for a,b:";
+    cin>>i>>j;
+    cout<<"enter values for e,f:";
+    cin>>k>>l;
+	Inc a(i), b(j), e(k), f(l);
 	cout << "Before using the operator ++()\n";
 	cout << "a = ";
 	a.display();
