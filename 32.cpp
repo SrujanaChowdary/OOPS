@@ -5,7 +5,7 @@ using namespace std;
 class MyClass {
   public: 
     void myFunction() {
-      cout << " parent class." ;
+      cout << " base class content." ;
     }
 };
 
@@ -22,4 +22,3 @@ int main() {
   myObj.myFunction();
   return 0;
 }
-
