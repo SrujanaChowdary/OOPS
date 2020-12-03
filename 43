@@ -22,13 +22,12 @@ class Test
 // Main Function 
 int main() 
 { 
-    // instantiation with float and int type 
+    
     Test <float, int> test1 (1.23, 123); 
-      
-    // instantiation with float and char type 
-    Test <int, char> test2 (100, 'W');    
-      
-    test1.show(); 
+     cout<<" instantiation with float and int type :";
+      test1.show(); 
+    cout<<" instantiation with float and char type:"; 
+    Test <int, char> test2 (100, 'W');   
     test2.show(); 
       
     return 0; 
