@@ -14,18 +14,18 @@ class employee
 };
 void employee::display()
 {
- cout<<"salary of employee is"<<endl;
- cout<<salary<<endl<<"name of the employee is"<<endl<<name<<endl;
+ cout<<"salary of employee:";
+ cout<<salary<<endl<<"name of the employee:"<<name<<endl;
 }
 int main()
 {
- cout<<"enter how many records u want to store"<<endl;
+ cout<<"enter how many records u want to store:";
  int n;
  cin>>n;
  employee *e[n];
  for(int i=0;i<n;++i)
  {
-  cout<<"enter salary and name of the employee"<<endl;
+  cout<<"enter salary and name of the employee:";
   string name;
   float sal;
   cin>>sal>>name;
@@ -37,4 +37,5 @@ int main()
   e[i]->display();
  }
 }
+
 
